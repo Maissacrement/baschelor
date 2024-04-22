@@ -37,6 +37,73 @@ Vous devez containeriser votre application.
 
 Un conteneur [Docker](https://docs.docker.com/engine/install/) est un environnement personnalisé conçu pour héberger votre application. Le Dockerfile est le fichier de spécification de ce conteneur, dont le but est de préparer l'environnement pour accueillir votre application dans un format prêt pour la production. Ce Dockerfile est constitué d'un ensemble de couches (layers) permettant d'atteindre cet objectif : fournir un environnement contenant toutes les dépendances nécessaires au bon fonctionnement de votre application dans son environnement final.
 
+## Comment construire son Dockerfile
+
+Voici quelque lien
+
+```yaml
+dockerfile:
+  - https://blog.eleven-labs.com/fr/comprendre-et-personnaliser-son-environnement-docker#les-instructions-dockerfile
+  - https://jfrog.com/fr/devops-tools/article/understanding-and-building-docker-images/#dockerfile-method
+```
+
+Instruction applicable par couche
+
+<table border="1">
+  <tr>
+    <th>Commande</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>RUN</td>
+    <td>Lancer des commandes shell</td>
+  </tr>
+  <tr>
+    <td>FROM</td>
+    <td>Déclarer une image source</td>
+  </tr>
+  <tr>
+    <td>ARG</td>
+    <td>Déclarer une variable utilisable uniquement durant le build docker</td>
+  </tr>
+  <tr>
+    <td>ENV</td>
+    <td>Déclarer une variable d’environnement utilisable durant le build et lors de l’utilisation du conteneur</td>
+  </tr>
+  <tr>
+    <td>COPY</td>
+    <td>Pour copier des fichiers et des répertoires de l’extérieur de l’image (ou d’une autre image) dans l’image en cours de création</td>
+  </tr>
+  <tr>
+    <td>ADD</td>
+    <td>Idem COPY mais avec la possibilité de télécharger des documents par URL</td>
+  </tr>
+  <tr>
+    <td>CMD</td>
+    <td>Définitions des options de la commandes principales du conteneurs (processus du conteneur)</td>
+  </tr>
+  <tr>
+    <td>ENTRYPOINT</td>
+    <td>Définition de la commande principale du conteneur issu de l’image</td>
+  </tr>
+  <tr>
+    <td>WORKDIR</td>
+    <td>Définit le répertoire de travail pour les instructions suivantes</td>
+  </tr>
+  <tr>
+    <td>EXPOSE</td>
+    <td>Déclare les ports sur lesquels le conteneur écoute les connexions</td>
+  </tr>
+  <tr>
+    <td>VOLUME</td>
+    <td>Déclare des points de montage dans le conteneur</td>
+  </tr>
+  <tr>
+    <td>USER</td>
+    <td>Définit l'utilisateur sous lequel les instructions suivantes sont exécutées</td>
+  </tr>
+</table>
+
 ## Comment construire son image docker
 
 ```bash
